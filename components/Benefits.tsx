@@ -29,34 +29,34 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section id="benefits" className="bg-white">
+    <section id="benefits" className="bg-surface/30 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-teal">Why tv for all</p>
-            <h2 className="text-3xl font-bold text-navy" style={{ fontFamily: 'var(--font-poppins)' }}>Trusted IPTV without friction</h2>
-            <p className="text-slate-600">Built for reliability, transparency, and global audiences.</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary">Why tv for all</p>
+            <h2 className="text-3xl font-bold text-text" style={{ fontFamily: 'var(--font-poppins)' }}>Trusted IPTV without friction</h2>
+            <p className="text-text-muted">Built for reliability, transparency, and global audiences.</p>
           </div>
-          <div className="flex items-center gap-3 text-sm text-slate-600">
-            <div className="rounded-full bg-teal/10 px-3 py-1 text-teal">99.95% uptime</div>
-            <div className="rounded-full bg-orange/10 px-3 py-1 text-orange">Refund-friendly</div>
+          <div className="flex items-center gap-3 text-sm text-text-muted">
+            <div className="rounded-full bg-primary/10 px-3 py-1 text-primary">99.95% uptime</div>
+            <div className="rounded-full bg-secondary/10 px-3 py-1 text-secondary">Refund-friendly</div>
           </div>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {benefits.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.title} className="rounded-2xl border border-slate-200 bg-surface p-6 shadow-card hover:shadow-md transition hover:border-teal/50">
+              <div key={item.title} className="rounded-2xl border border-border/50 bg-surface/50 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl hover:border-primary/50 transition-all">
                 <div className="flex items-center gap-3">
-                  <div className="inline-flex rounded-lg bg-teal/10 p-3 text-teal">
+                  <div className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <div className="inline-flex rounded-full bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-teal">
+                  <div className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
                     {item.badge}
                   </div>
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-navy" style={{ fontFamily: 'var(--font-poppins)' }}>{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{item.description}</p>
+                <h3 className="mt-4 text-xl font-semibold text-text" style={{ fontFamily: 'var(--font-poppins)' }}>{item.title}</h3>
+                <p className="mt-2 text-sm text-text-muted">{item.description}</p>
               </div>
             );
           })}
