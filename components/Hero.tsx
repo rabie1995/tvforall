@@ -125,7 +125,7 @@ export function Hero() {
                     { name: 'Sports HD', viewers: '2.1K', image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=300&fit=crop' },
                     { name: 'Movies 4K', viewers: '1.8K', image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=300&fit=crop' },
                     { name: 'News 24/7', viewers: '956', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=300&fit=crop' },
-                    { name: 'Kids Zone', viewers: '742', image: 'https://images.unsplash.com/photo-1587616211892-cc1b8fafd75c?w=400&h=300&fit=crop' },
+                    { name: 'Kids Zone', viewers: '742', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop' },
                     { name: 'Documentary', viewers: '523', image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=300&fit=crop' },
                     { name: 'Music TV', viewers: '389', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop' },
                   ].map((channel, index) => (
