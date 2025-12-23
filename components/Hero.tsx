@@ -158,13 +158,13 @@ export function Hero() {
                         </svg>
                       </div>
                       <div>
-                        <p className="font-semibold text-text text-sm">Secure USDT Payment</p>
+                        <p className="font-semibold text-text text-sm">Secure Crypto Payment</p>
                         <p className="text-xs text-text-muted">Instant blockchain verification</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-secondary">$9.99</p>
-                      <p className="text-xs text-text-muted">per month</p>
+                      <p className="text-lg font-bold text-secondary">$59.00</p>
+                      <p className="text-xs text-text-muted">per year</p>
                     </div>
                   </div>
                 </div>
