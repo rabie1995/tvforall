@@ -93,7 +93,7 @@ export function PricingCard({ plan }: { plan: Plan }) {
         className={`inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer ${plan.popular ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-primary/25' : 'bg-gradient-to-r from-surface to-surface/80 hover:from-primary hover:to-secondary'}`}
       >
         <PaperAirplaneIcon className="h-5 w-5" />
-        Start Streaming Now
+        Pay Securely with Crypto
       </a>
 
       <div className="mt-4 flex items-center justify-center gap-4 text-xs text-text-muted">
