@@ -1,37 +1,71 @@
-/**
- * CHECKOUT API DISABLED
- * 
- * This API endpoint is no longer used.
- * The site now uses DIRECT payment links to NOWPayments.
- * 
- * Payment Links:
- * - 3 Months: https://nowpayments.io/payment/?iid=6334134208
- * - 6 Months: https://nowpayments.io/payment/?iid=6035616621
- * - 12 Months: https://nowpayments.io/payment/?iid=5981936582
- */
-
 export const runtime = "nodejs";
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+
+interface CheckoutRequest {
+  name: string;
+  email: string;
+  region: string;
+  planId: string;
+  planName: string;
+  planPrice: number;
+}
 
 export async function GET() {
   return NextResponse.json({
-    status: 'disabled',
-    message: 'Checkout API is disabled. Site uses direct NOWPayments links.',
-    paymentLinks: {
-      plan_3m: 'https://nowpayments.io/payment/?iid=6334134208',
-      plan_6m: 'https://nowpayments.io/payment/?iid=6035616621',
-      plan_12m: 'https://nowpayments.io/payment/?iid=5981936582',
-    }
+    status: 'active',
+    message: 'Checkout API is active. Collects customer info before NOWPayments redirect.',
   });
 }
 
-export async function POST() {
-  return NextResponse.json(
-    {
-      success: false,
-      error: 'Checkout API is disabled. Please use direct payment links from the homepage.',
-    },
-    { status: 410 } // 410 Gone
-  );
+export async function POST(req: NextRequest) {
+  try {
+    const body: CheckoutRequest = await req.json();
+
+    // Validate inputs
+    if (!body.name || !body.email || !body.region || !body.planId) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
+    // Generate unique customer ID
+    const customerId = `cust_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+    // Create order data
+    const orderData = {
+      customerId,
+      timestamp: new Date().toISOString(),
+      customer: {
+        name: body.name,
+        email: body.email,
+        region: body.region
+      },
+      order: {
+        planId: body.planId,
+        planName: body.planName,
+        planPrice: body.planPrice
+      },
+      status: 'pending_payment'
+    };
+
+    // TODO: Save to database
+    // TODO: Send email confirmation
+    // TODO: Notify admin panel via webhook
+
+    console.log('Order created:', orderData);
+
+    return NextResponse.json({
+      success: true,
+      customerId,
+      message: 'Order created successfully'
+    });
+  } catch (error) {
+    console.error('Checkout error:', error);
+    return NextResponse.json(
+      { error: 'Failed to process checkout' },
+      { status: 500 }
+    );
+  }
 }

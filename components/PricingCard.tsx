@@ -4,6 +4,7 @@ import { CheckCircleIcon, StarIcon, CalendarIcon, SparklesIcon, FireIcon, BoltIc
 import { plans, type Plan } from '@/lib/plans';
 import { CURRENT_PROMO, hasActivePromo } from '@/lib/promo';
 import { useState, useEffect } from 'react';
+import { CheckoutModal } from './CheckoutModal';
 
 const planIcons: Record<string, React.ReactNode> = {
   'plan_3m': <CalendarIcon className="h-6 w-6" />,
@@ -15,6 +16,7 @@ const planIcons: Record<string, React.ReactNode> = {
 export function PricingCard({ plan }: { plan: Plan }) {
   const icon = planIcons[plan.id] || <SparklesIcon className="h-6 w-6" />;
   const [isPromoActive, setIsPromoActive] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   useEffect(() => {
     // Check if this plan has active promo
@@ -82,19 +84,21 @@ export function PricingCard({ plan }: { plan: Plan }) {
         ))}
       </ul>
 
-      <a
-        href={
-          plan.id === 'plan_3m' ? 'https://nowpayments.io/payment/?iid=6334134208' :
-          plan.id === 'plan_6m' ? 'https://nowpayments.io/payment/?iid=6035616621' :
-          'https://nowpayments.io/payment/?iid=5981936582'
-        }
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={() => setIsCheckoutOpen(true)}
         className={`relative z-10 inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer pointer-events-auto ${plan.popular ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-primary/25' : 'bg-gradient-to-r from-surface to-surface/80 hover:from-primary hover:to-secondary'}`}
       >
         <PaperAirplaneIcon className="h-5 w-5" />
         Pay Securely with Crypto
-      </a>
+      </button>
+
+      <CheckoutModal
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        planId={plan.id}
+        planName={plan.name}
+        planPrice={plan.priceUsd}
+      />
 
       <div className="mt-4 flex items-center justify-center gap-4 text-xs text-text-muted">
         <div className="flex items-center gap-1">
