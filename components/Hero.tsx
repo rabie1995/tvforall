@@ -1,13 +1,7 @@
-'use client';
-
 import Link from 'next/link';
 import { ShieldCheckIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
-import { useState } from 'react';
-import { CheckoutModal } from './CheckoutModal';
 
 export function Hero() {
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-background via-background to-surface flex items-center overflow-hidden">
       {/* Background Pattern */}
@@ -42,15 +36,15 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => setIsCheckoutOpen(true)}
-                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer"
+              <Link
+                href="/checkout?plan=plan_12m"
+                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 <svg className="h-5 w-5 transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
                 Pay Securely with Crypto
-              </button>
+              </Link>
 
               <Link
                 href="#plans"
@@ -61,16 +55,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Checkout Modal */}
-          <CheckoutModal
-            isOpen={isCheckoutOpen}
-            onClose={() => setIsCheckoutOpen(false)}
-            planId="plan_12m"
-            planName="12 Months"
-            planPrice={59}
-          />
 
-          {/* Right Content - Feature Showcase */}
           <div className="relative animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
               {/* Main Card */}

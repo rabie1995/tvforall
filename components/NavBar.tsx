@@ -1,13 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import { Logo } from './Logo';
-import { CheckoutModal } from './CheckoutModal';
 
 export function NavBar() {
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-surface/95 backdrop-blur-lg shadow-lg">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -37,24 +33,15 @@ export function NavBar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setIsCheckoutOpen(true)}
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-200 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer"
+          <Link
+            href="/checkout?plan=plan_12m"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-200 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             Pay Now
-          </button>
-
-          <CheckoutModal
-            isOpen={isCheckoutOpen}
-            onClose={() => setIsCheckoutOpen(false)}
-            planId="plan_12m"
-            planName="12 Months"
-            planPrice={59}
-          />
-
+          </Link>
           {/* Mobile menu button */}
           <button className="md:hidden p-2 rounded-lg text-text-muted hover:text-text hover:bg-surface-light transition-colors">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
