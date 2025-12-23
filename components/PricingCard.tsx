@@ -35,7 +35,7 @@ export function PricingCard({ plan }: { plan: Plan }) {
     <div className={`group relative rounded-2xl border border-border/50 bg-surface/50 backdrop-blur-sm p-8 shadow-xl shadow-primary/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/15 hover:border-primary/30 hover:scale-105 animate-fade-in ${plan.popular ? 'ring-2 ring-primary shadow-primary/20' : ''} ${isPromoActive ? 'ring-2 ring-accent shadow-accent/20' : ''}`}>
       {/* Gradient overlay for popular plans */}
       {plan.popular && (
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 opacity-50"></div>
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 opacity-50 pointer-events-none"></div>
       )}
 
       {isPromoActive ? (
@@ -90,7 +90,7 @@ export function PricingCard({ plan }: { plan: Plan }) {
         }
         target="_blank"
         rel="noopener noreferrer"
-        className={`inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer ${plan.popular ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-primary/25' : 'bg-gradient-to-r from-surface to-surface/80 hover:from-primary hover:to-secondary'}`}
+        className={`relative z-10 inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer pointer-events-auto ${plan.popular ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-primary/25' : 'bg-gradient-to-r from-surface to-surface/80 hover:from-primary hover:to-secondary'}`}
       >
         <PaperAirplaneIcon className="h-5 w-5" />
         Pay Securely with Crypto
