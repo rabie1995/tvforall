@@ -1,0 +1,357 @@
+/* ================================
+   PREMIUM BACKGROUND SYSTEM
+   High-end SaaS quality design
+   ================================ */
+
+.premium-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: #0F172A;
+}
+
+/* ================================
+   BASE LAYER - Deep navy gradient
+   ================================ */
+.bg-base {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(8, 12, 23, 1) 50%,
+    rgba(3, 7, 18, 1) 100%
+  );
+}
+
+/* ================================
+   RADIAL GLOW LAYERS - Depth & atmosphere
+   ================================ */
+.bg-glow-teal-1 {
+  background: radial-gradient(
+    ellipse 800px 600px at 20% 10%,
+    rgba(6, 182, 212, 0.08) 0%,
+    transparent 50%
+  );
+  animation: drift-slow 35s ease-in-out infinite;
+}
+
+.bg-glow-teal-2 {
+  background: radial-gradient(
+    ellipse 700px 700px at 80% 60%,
+    rgba(6, 182, 212, 0.06) 0%,
+    transparent 50%
+  );
+  animation: drift-reverse 40s ease-in-out infinite;
+}
+
+.bg-glow-green {
+  background: radial-gradient(
+    ellipse 600px 500px at 50% 80%,
+    rgba(14, 165, 163, 0.07) 0%,
+    transparent 50%
+  );
+  animation: pulse-glow 30s ease-in-out infinite;
+}
+
+.bg-glow-orange {
+  background: radial-gradient(
+    circle 400px at 90% 20%,
+    rgba(249, 115, 22, 0.03) 0%,
+    transparent 60%
+  );
+  animation: drift-slow 45s ease-in-out infinite reverse;
+}
+
+/* ================================
+   ATMOSPHERIC LAYER - Subtle grain & depth
+   ================================ */
+.bg-atmosphere {
+  background: 
+    radial-gradient(
+      ellipse at top,
+      rgba(6, 182, 212, 0.02) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      rgba(14, 165, 163, 0.02) 0%,
+      transparent 40%
+    );
+  opacity: 0.8;
+  mix-blend-mode: soft-light;
+}
+
+/* Subtle noise texture for premium feel */
+.bg-atmosphere::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(6, 182, 212, 0.005) 2px,
+      rgba(6, 182, 212, 0.005) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(6, 182, 212, 0.005) 2px,
+      rgba(6, 182, 212, 0.005) 4px
+    );
+  opacity: 0.3;
+}
+
+/* ================================
+   FLOATING PARTICLES - Anime-inspired (very subtle)
+   ================================ */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.particle-1 {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent);
+  top: 20%;
+  left: 15%;
+  animation: float-particle 25s ease-in-out infinite;
+}
+
+.particle-2 {
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, rgba(14, 165, 163, 0.3), transparent);
+  top: 60%;
+  right: 20%;
+  animation: float-particle 30s ease-in-out infinite 5s;
+}
+
+.particle-3 {
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.35), transparent);
+  bottom: 30%;
+  left: 40%;
+  animation: float-particle 28s ease-in-out infinite 8s;
+}
+
+.particle-4 {
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.25), transparent);
+  top: 40%;
+  right: 35%;
+  animation: float-particle 32s ease-in-out infinite 12s;
+}
+
+.particle-5 {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(14, 165, 163, 0.3), transparent);
+  bottom: 15%;
+  right: 50%;
+  animation: float-particle 27s ease-in-out infinite 3s;
+}
+
+/* ================================
+   LIGHT BEAMS - Subtle directional light
+   ================================ */
+.light-beam {
+  position: absolute;
+  opacity: 0.03;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.beam-1 {
+  width: 600px;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.15) 0%,
+    transparent 70%
+  );
+  top: -50px;
+  left: -100px;
+  transform: rotate(-20deg);
+  animation: beam-drift 40s ease-in-out infinite;
+}
+
+.beam-2 {
+  width: 500px;
+  height: 180px;
+  background: linear-gradient(
+    225deg,
+    rgba(14, 165, 163, 0.12) 0%,
+    transparent 70%
+  );
+  bottom: -50px;
+  right: -80px;
+  transform: rotate(25deg);
+  animation: beam-drift 35s ease-in-out infinite reverse;
+}
+
+/* ================================
+   GRADIENT MESH - Premium overlay
+   ================================ */
+.bg-mesh {
+  background: 
+    radial-gradient(
+      at 0% 0%,
+      rgba(6, 182, 212, 0.02) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 0%,
+      rgba(249, 115, 22, 0.015) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 100%,
+      rgba(14, 165, 163, 0.02) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 100%,
+      rgba(6, 182, 212, 0.015) 0%,
+      transparent 50%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+/* ================================
+   FADE TO LIGHT - Smooth transition for content sections
+   ================================ */
+.bg-fade-to-light {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 20%,
+    rgba(248, 250, 252, 0.3) 70%,
+    rgba(248, 250, 252, 0.8) 100%
+  );
+}
+
+/* ================================
+   UTILITY - All layers
+   ================================ */
+.bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ================================
+   ANIMATIONS - Smooth, premium motion
+   ================================ */
+
+@keyframes drift-slow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(30px, -20px);
+  }
+  66% {
+    transform: translate(-20px, 30px);
+  }
+}
+
+@keyframes drift-reverse {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-25px, 20px);
+  }
+  66% {
+    transform: translate(20px, -25px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(20px, -30px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-15px, -50px);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(25px, -40px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes beam-drift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-20deg);
+  }
+  50% {
+    transform: translate(40px, 20px) rotate(-22deg);
+  }
+}
+
+/* ================================
+   RESPONSIVE - Mobile optimization
+   ================================ */
+@media (max-width: 768px) {
+  .bg-glow-teal-1,
+  .bg-glow-teal-2,
+  .bg-glow-green {
+    background-size: 150%;
+  }
+  
+  .light-beam {
+    display: none;
+  }
+  
+  .particle {
+    width: 3px !important;
+    height: 3px !important;
+  }
+}
+
+/* ================================
+   PERFORMANCE - GPU acceleration
+   ================================ */
+.premium-background,
+.bg-layer,
+.particle,
+.light-beam {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}

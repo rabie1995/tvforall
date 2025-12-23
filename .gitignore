@@ -1,0 +1,21 @@
+node_modules
+.next
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Build outputs
+dist
+build
+out
+
+# TypeScript build info
+tsconfig.tsbuildinfo

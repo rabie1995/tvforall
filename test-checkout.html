@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout Test</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 50px auto; }
+    .test-btn { padding: 10px 20px; background: #17a2b8; color: white; border: none; cursor: pointer; margin: 10px 0; }
+    .output { background: #f5f5f5; padding: 15px; margin-top: 20px; border-radius: 5px; white-space: pre-wrap; font-family: monospace; }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Checkout API Test</h1>
+  
+  <button class="test-btn" onclick="testCheckout()">Test Checkout API</button>
+  <button class="test-btn" onclick="testVersion()">Test Version API</button>
+  <button class="test-btn" onclick="clearOutput()">Clear Output</button>
+  
+  <div id="output" class="output">Output will appear here...</div>
+
+  <script>
+    function log(msg, isSuccess = null) {
+      const output = document.getElementById('output');
+      const color = isSuccess === true ? 'success' : isSuccess === false ? 'error' : '';
+      output.innerHTML += `<div class="${color}">${msg}</div>`;
+      console.log(msg);
+    }
+
+    function clearOutput() {
+      document.getElementById('output').innerHTML = '';
+    }
+
+    async function testVersion() {
+      log('🔵 Testing /api/version...');
+      try {
+        const res = await fetch('/api/version');
+        const data = await res.json();
+        log('✅ Version API works!', true);
+        log(JSON.stringify(data, null, 2), true);
+      } catch (e) {
+        log('❌ Error: ' + e.message, false);
+      }
+    }
+
+    async function testCheckout() {
+      log('🔵 Testing /api/checkout...');
+      try {
+        const res = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName: 'Test User',
+            email: 'test@example.com',
+            region: 'United States',
+            adultChannels: true,
+            plan: 'plan_3m'
+          })
+        });
+
+        const data = await res.json();
+        
+        if (res.ok) {
+          log('✅ Checkout API SUCCESS!', true);
+          log('Order ID: ' + data.orderId, true);
+          log('Payment Link: ' + data.paymentLink, true);
+          
+          if (data.paymentLink && data.paymentLink.includes('nowpayments.io')) {
+            log('✅ Link is NOWPayments - CORRECT!', true);
+          }
+        } else {
+          log('❌ Error: ' + data.error, false);
+        }
+      } catch (e) {
+        log('❌ Test failed: ' + e.message, false);
+      }
+    }
+
+    // Auto-run version test on load
+    window.addEventListener('load', () => {
+      setTimeout(testVersion, 500);
+    });
+  </script>
+</body>
+</html>
