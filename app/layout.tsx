@@ -11,14 +11,17 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700'], subsets: ['latin
 const notoKufi = Noto_Kufi_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], display: 'swap', variable: '--font-kufi' });
 
 export const metadata: Metadata = {
-  title: 'tv for all | Premium IPTV Subscriptions',
-  description: 'Secure, fast IPTV streaming with 24/7 support. Pay with USDT and start watching instantly.',
+  title: 'TV For All – Premium IPTV',
+  description: 'Secure, fast IPTV streaming with 24/7 support. Pay with crypto and start watching instantly.',
   metadataBase: new URL('https://tvforall.store'),
+  icons: {
+    icon: '/icon.svg',
+  },
   openGraph: {
-    title: 'tvforall.store | Premium IPTV Subscriptions',
-    description: 'Choose your plan, pay in USDT, and start watching securely.',
+    title: 'TV For All – Premium IPTV',
+    description: 'Choose your plan, pay with crypto, and start watching securely.',
     url: 'https://tvforall.store',
-    siteName: 'tvforall.store',
+    siteName: 'TV For All',
     images: [
       {
         url: 'https://images.unsplash.com/photo-1527443224154-d8c2fc36c66a',
