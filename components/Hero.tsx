@@ -122,19 +122,26 @@ export function Hero() {
                 {/* Channel Grid */}
                 <div className="grid grid-cols-3 gap-3 mb-6">
                   {[
-                    { name: 'Sports HD', viewers: '2.1K' },
-                    { name: 'Movies 4K', viewers: '1.8K' },
-                    { name: 'News 24/7', viewers: '956' },
-                    { name: 'Kids Zone', viewers: '742' },
-                    { name: 'Documentary', viewers: '523' },
-                    { name: 'Music TV', viewers: '389' },
+                    { name: 'Sports HD', viewers: '2.1K', image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=300&fit=crop' },
+                    { name: 'Movies 4K', viewers: '1.8K', image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=300&fit=crop' },
+                    { name: 'News 24/7', viewers: '956', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=300&fit=crop' },
+                    { name: 'Kids Zone', viewers: '742', image: 'https://images.unsplash.com/photo-1587616211892-cc1b8fafd75c?w=400&h=300&fit=crop' },
+                    { name: 'Documentary', viewers: '523', image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=300&fit=crop' },
+                    { name: 'Music TV', viewers: '389', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop' },
                   ].map((channel, index) => (
                     <div
                       key={channel.name}
                       className="rounded-lg bg-surface-light p-3 hover:bg-primary/10 transition-colors cursor-pointer group"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <div className="h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded mb-2 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all" />
+                      <div className="h-12 rounded mb-2 overflow-hidden relative">
+                        <img 
+                          src={channel.image} 
+                          alt={channel.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
                       <p className="text-xs font-medium text-text truncate">{channel.name}</p>
                       <p className="text-xs text-text-muted">{channel.viewers} watching</p>
                     </div>
