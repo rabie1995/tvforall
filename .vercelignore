@@ -1,0 +1,24 @@
+# Local development folders
+tvforall/
+tvisforall/
+tvtvforall/
+
+# Database files
+*.db
+*.db-journal
+
+# Environment files
+.env.local
+.env.*.local
+
+# Testing
+tests/
+test-*.js
+
+# Documentation
+*.md
+!README.md
+
+# Logs
+*.log
+npm-debug.log*
