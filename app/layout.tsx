@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Suspense } from 'react';
 import { Inter, Noto_Kufi_Arabic, Poppins } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { SiteBackground } from '@/components/SiteBackground';
 import TelegramSupportButton from '@/components/TelegramSupportButton';
 import { AnalyticsProvider } from '@/components/AnalyticsProvider';
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         {children}
         <TelegramSupportButton />
+        <Analytics />
       </body>
     </html>
   );
