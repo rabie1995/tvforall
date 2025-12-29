@@ -1,0 +1,38 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Baseball field at night with pitcher mound">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#060812" offset="0"/>
+      <stop stop-color="#0a1224" offset="0.5"/>
+      <stop stop-color="#0c152a" offset="1"/>
+    </linearGradient>
+    <radialGradient id="lights" cx="50%" cy="15%" r="75%">
+      <stop stop-color="#38bdf8" stop-opacity="0.42" offset="0"/>
+      <stop stop-color="#22d3ee" stop-opacity="0.18" offset="0.55"/>
+      <stop stop-color="#0ea5e9" stop-opacity="0" offset="1"/>
+    </radialGradient>
+    <linearGradient id="field" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#0b9b5c" offset="0"/>
+      <stop stop-color="#0a7c4c" offset="1"/>
+    </linearGradient>
+    <linearGradient id="infield" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#c08457" offset="0"/>
+      <stop stop-color="#9a6a45" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#lights)"/>
+  <rect x="-60" y="420" width="1400" height="360" fill="url(#field)" opacity="0.94"/>
+  <ellipse cx="640" cy="520" rx="380" ry="160" fill="url(#infield)" opacity="0.95"/>
+  <ellipse cx="640" cy="520" rx="120" ry="60" fill="#f8fafc" opacity="0.08"/>
+  <g opacity="0.7" stroke="#cbd5e1" stroke-width="5">
+    <line x1="100" y1="600" x2="1180" y2="600"/>
+    <line x1="100" y1="660" x2="1180" y2="660"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M610 430c14-26 32-38 52-38 20 0 32 8 46 26l-26 70-96-8z" fill="#e2e8f0"/>
+    <rect x="640" y="360" width="10" height="100" rx="5" fill="#38bdf8"/>
+    <circle cx="656" cy="380" r="14" fill="#f97316"/>
+  </g>
+  <text x="90" y="150" fill="#e2e8f0" font-family="'Inter',sans-serif" font-size="46" font-weight="700" letter-spacing="1.5">BASEBALL PRIME</text>
+  <text x="90" y="190" fill="#cbd5e1" font-family="'Inter',sans-serif" font-size="22" font-weight="600">Diamond lights • Pitcher focus • 4K stream</text>
+</svg>

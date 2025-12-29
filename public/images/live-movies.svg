@@ -1,0 +1,54 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cinema screen with theater seats and neon lighting">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0b0c14" offset="0"/>
+      <stop stop-color="#0a1020" offset="0.45"/>
+      <stop stop-color="#0c0f1d" offset="1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop stop-color="#22d3ee" stop-opacity="0.35" offset="0"/>
+      <stop stop-color="#a855f7" stop-opacity="0.25" offset="0.5"/>
+      <stop stop-color="#0ea5e9" stop-opacity="0" offset="1"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" x2="1" y1="0" y2="0">
+      <stop stop-color="#0f172a" offset="0"/>
+      <stop stop-color="#0b1324" offset="1"/>
+    </linearGradient>
+    <linearGradient id="seats" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#111827" offset="0"/>
+      <stop stop-color="#0b1224" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <rect x="200" y="180" width="1520" height="520" rx="32" fill="url(#screen)" stroke="#1f2937" stroke-width="12"/>
+  <rect x="240" y="220" width="1440" height="440" rx="24" fill="#0b182b" opacity="0.9"/>
+  <g opacity="0.65" fill="#1f2937">
+    <rect x="260" y="240" width="220" height="180" rx="18"/>
+    <rect x="520" y="240" width="220" height="180" rx="18"/>
+    <rect x="780" y="240" width="220" height="180" rx="18"/>
+    <rect x="1040" y="240" width="220" height="180" rx="18"/>
+    <rect x="1300" y="240" width="220" height="180" rx="18"/>
+  </g>
+  <g opacity="0.55" fill="#111827">
+    <rect x="260" y="460" width="220" height="160" rx="18"/>
+    <rect x="520" y="460" width="220" height="160" rx="18"/>
+    <rect x="780" y="460" width="220" height="160" rx="18"/>
+    <rect x="1040" y="460" width="220" height="160" rx="18"/>
+    <rect x="1300" y="460" width="220" height="160" rx="18"/>
+  </g>
+  <g>
+    <rect x="160" y="720" width="1600" height="240" rx="26" fill="url(#seats)" stroke="#0f172a" stroke-width="10" opacity="0.95"/>
+    <g fill="#0f172a" opacity="0.85">
+      <rect x="220" y="760" width="140" height="140" rx="20"/>
+      <rect x="420" y="760" width="140" height="140" rx="20"/>
+      <rect x="620" y="760" width="140" height="140" rx="20"/>
+      <rect x="820" y="760" width="140" height="140" rx="20"/>
+      <rect x="1020" y="760" width="140" height="140" rx="20"/>
+      <rect x="1220" y="760" width="140" height="140" rx="20"/>
+      <rect x="1420" y="760" width="140" height="140" rx="20"/>
+    </g>
+  </g>
+  <text x="120" y="180" fill="#e2e8f0" font-family="'Inter',sans-serif" font-size="70" font-weight="700" letter-spacing="2">TOP MOVIES</text>
+  <text x="120" y="240" fill="#cbd5e1" font-family="'Inter',sans-serif" font-size="34" font-weight="600">Cinema screen • Dolby mood • Premium seating</text>
+</svg>

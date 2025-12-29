@@ -12,13 +12,26 @@ export default function Home() {
       <NavBar />
       <Hero />
 
+      {/* Pricing Section - surfaced early for primary action */}
+      <section id="plans" className="pt-16 pb-24 bg-surface/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-text mb-4">Choose Your Plan</h2>
+            <p className="text-text-muted text-lg max-w-3xl mx-auto">
+              Flexible subscription pricing with instant activation. Subscribe securely with cryptocurrency and start streaming live sports, series, and movies right away.
+            </p>
+          </div>
+          <PricingGrid />
+        </div>
+      </section>
+
       {/* Trust Signals Section */}
       <section className="py-16 bg-surface/50 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-text mb-4">Trusted by Thousands</h2>
+            <h2 className="text-3xl font-bold text-text mb-4">Trusted Streaming for US Sports & Entertainment</h2>
             <p className="text-text-muted max-w-2xl mx-auto">
-              Join our community of satisfied customers who enjoy premium streaming with enterprise-grade security
+              Instant activation, secure crypto checkout, no contracts, and 24/7 support built for American sports fans and movie lovers
             </p>
           </div>
           <TrustBadges />
@@ -29,25 +42,12 @@ export default function Home() {
       <section id="features" className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-text mb-4">Why Choose TVFORALL?</h2>
+            <h2 className="text-4xl font-bold text-text mb-4">Why US Fans Choose TV For All</h2>
             <p className="text-text-muted text-lg max-w-3xl mx-auto">
-              Experience the future of streaming with our cutting-edge platform designed for reliability and performance
+              Stream live NFL, NBA, MLB, NHL plus top series and movies with low latency, uptime guarantees, and smooth HD quality
             </p>
           </div>
           <Features />
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="plans" className="py-20 bg-surface/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-text mb-4">Choose Your Plan</h2>
-            <p className="text-text-muted text-lg max-w-3xl mx-auto">
-              Flexible pricing with instant activation. Pay securely with cryptocurrency and start streaming immediately.
-            </p>
-          </div>
-          <PricingGrid />
         </div>
       </section>
 
@@ -64,22 +64,20 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-text mb-4">Get Started Today</h2>
             <p className="text-text-muted text-lg max-w-3xl mx-auto mb-8">
-              Ready to experience premium streaming? Choose your plan above and start watching in minutes.
+              Ready to experience premium streaming? Choose your subscription plan above and start watching in minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://nowpayments.io/payment/?iid=5981936582"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/checkout?plan=plan_12m"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 hover:scale-105"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Pay Securely with Crypto
+                Subscribe Securely
               </a>
               <a
-                href="https://t.me/your_support"
+                href="https://t.me/myiptv99"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-xl border border-border bg-surface/50 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-text hover:bg-surface hover:border-primary/50 transition-all duration-300"

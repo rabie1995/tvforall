@@ -4,15 +4,15 @@ const features = [
   {
     id: 1,
     title: '4K Ultra HD Streaming',
-    description: 'Experience crystal-clear video quality with adaptive bitrate technology for seamless playback on any device.',
+    description: 'Crystal-clear live games and series with adaptive bitrate so NFL Sundays, NBA nights, and movie marathons stay smooth.',
     icon: PlayCircleIcon,
     color: 'bg-gradient-to-br from-blue-500 to-purple-600',
     delay: '0ms'
   },
   {
     id: 2,
-    title: 'Global Content Library',
-    description: 'Access premium channels from 50+ countries in multiple languages including Arabic, English, and French.',
+    title: 'US-First Content Library',
+    description: 'Priority access to American sports networks, prime-time series, and movie channels—plus international add-ons when you need them.',
     icon: GlobeAltIcon,
     color: 'bg-gradient-to-br from-green-500 to-teal-600',
     delay: '100ms'
@@ -20,7 +20,7 @@ const features = [
   {
     id: 3,
     title: 'Multi-Device Sync',
-    description: 'Stream seamlessly across all your devices. Start on your phone, continue on your TV without missing a beat.',
+    description: 'Start on mobile, finish on the big screen. Perfect for pregame on your phone and prime-time on your TV.',
     icon: DevicePhoneMobileIcon,
     color: 'bg-gradient-to-br from-purple-500 to-pink-600',
     delay: '200ms'
@@ -28,7 +28,7 @@ const features = [
   {
     id: 4,
     title: 'Enterprise Uptime',
-    description: '99.9% uptime guarantee with redundant global servers ensuring zero buffering and maximum reliability.',
+    description: '99.9% uptime with redundant edge delivery to keep live games stable, even during playoffs and finals.',
     icon: ShieldCheckIcon,
     color: 'bg-gradient-to-br from-orange-500 to-red-600',
     delay: '300ms'
@@ -36,7 +36,7 @@ const features = [
   {
     id: 5,
     title: 'AI-Powered Quality',
-    description: 'Advanced AI optimization delivers the perfect streaming quality based on your connection speed.',
+    description: 'Auto-optimizes quality for fast-moving plays and cinematic scenes—no manual tweaks needed.',
     icon: CpuChipIcon,
     color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
     delay: '400ms'
@@ -44,7 +44,7 @@ const features = [
   {
     id: 6,
     title: 'Premium Support',
-    description: '24/7 expert support team ready to help you with any questions or technical issues instantly.',
+    description: '24/7 English-first support to keep your stream live for every kickoff, tipoff, and premiere.',
     icon: StarIcon,
     color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
     delay: '500ms'

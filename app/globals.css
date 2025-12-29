@@ -40,3 +40,19 @@ body {
     radial-gradient(circle at 80% 0%, rgba(6, 182, 212, 0.12) 0, rgba(6, 182, 212, 0) 30%),
     linear-gradient(135deg, #0f172a 0%, #0b1224 35%, #0f172a 100%);
 }
+
+/* Mobile menu slide-in animation */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}

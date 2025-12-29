@@ -26,9 +26,9 @@ function SuccessContent() {
           <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
             <CheckCircleIcon className="h-10 w-10 text-green-600" />
           </div>
-          <h1 className="text-3xl font-bold text-navy mb-2">Payment Successful!</h1>
+          <h1 className="text-3xl font-bold text-navy mb-2">Subscription Confirmed!</h1>
           <p className="text-gray-600">
-            Thank you for your purchase. Your order has been confirmed.
+            Thank you for subscribing. Your access has been confirmed.
           </p>
         </div>
 

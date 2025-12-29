@@ -16,9 +16,9 @@ function CancelContent() {
           <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-4">
             <XCircleIcon className="h-10 w-10 text-red-600" />
           </div>
-          <h1 className="text-3xl font-bold text-navy mb-2">Payment Cancelled</h1>
+          <h1 className="text-3xl font-bold text-navy mb-2">Subscription Cancelled</h1>
           <p className="text-gray-600">
-            Your payment was cancelled. No charges have been made.
+            Your subscription checkout was cancelled. No charges have been made.
           </p>
         </div>
 

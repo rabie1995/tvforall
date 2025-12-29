@@ -16,7 +16,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Logo />
             <p className="mt-6 text-sm text-text-muted leading-relaxed max-w-xs">
-              Premium IPTV streaming with enterprise-grade security and worldwide content access. Licensed and trusted by millions.
+              Premium TV subscription with enterprise-grade security and worldwide content access. Licensed and trusted by millions.
             </p>
             <div className="mt-6 flex items-center gap-2">
               <ShieldCheckIcon className="h-5 w-5 text-green-500" />
@@ -28,10 +28,10 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold text-text mb-6">Services</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/plans" className="text-text-muted hover:text-primary transition-colors duration-300">Subscription Plans</Link></li>
-              <li><Link href="/channels" className="text-text-muted hover:text-primary transition-colors duration-300">Channel Guide</Link></li>
-              <li><Link href="/devices" className="text-text-muted hover:text-primary transition-colors duration-300">Device Support</Link></li>
-              <li><Link href="/quality" className="text-text-muted hover:text-primary transition-colors duration-300">Streaming Quality</Link></li>
+              <li><Link href="#plans" className="text-text-muted hover:text-primary transition-colors duration-300">Subscription Plans</Link></li>
+              <li><Link href="#features" className="text-text-muted hover:text-primary transition-colors duration-300">Features</Link></li>
+              <li><Link href="#support" className="text-text-muted hover:text-primary transition-colors duration-300">Support</Link></li>
+              <li><Link href="#features" className="text-text-muted hover:text-primary transition-colors duration-300">Streaming Quality</Link></li>
             </ul>
           </div>
 
@@ -39,10 +39,10 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold text-text mb-6">Support</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/help" className="text-text-muted hover:text-primary transition-colors duration-300">Help Center</Link></li>
-              <li><Link href="/contact" className="text-text-muted hover:text-primary transition-colors duration-300">Contact Us</Link></li>
-              <li><Link href="/status" className="text-text-muted hover:text-primary transition-colors duration-300">System Status</Link></li>
-              <li><Link href="/refund-policy" className="text-text-muted hover:text-primary transition-colors duration-300">Refund Policy</Link></li>
+              <li><Link href="#support" className="text-text-muted hover:text-primary transition-colors duration-300">Help Center</Link></li>
+              <li><a href="https://t.me/myiptv99" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors duration-300">Contact Us</a></li>
+              <li><Link href="#features" className="text-text-muted hover:text-primary transition-colors duration-300">System Status</Link></li>
+              <li><Link href="#plans" className="text-text-muted hover:text-primary transition-colors duration-300">Refund Policy</Link></li>
             </ul>
           </div>
 
@@ -106,7 +106,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="https://telegram.me/your_support"
+              href="https://t.me/myiptv99"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-surface/50 p-2 text-text-muted hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:scale-110"

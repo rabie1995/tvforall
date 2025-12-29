@@ -1,62 +1,79 @@
+"use client";
+
 import Link from 'next/link';
-import { ShieldCheckIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import { ShieldCheckIcon, CheckCircleIcon, LockClosedIcon, CreditCardIcon } from '@heroicons/react/24/solid';
+import { trackEvent } from '@/lib/analytics';
 
 export function Hero() {
+  const handlePrimaryCta = () => {
+    trackEvent('click_subscribe', { cta: 'hero_primary', plan_id: 'plan_12m' });
+    trackEvent('cta_primary_click', { location: 'hero', plan_id: 'plan_12m' });
+  };
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-background via-background to-surface flex items-center overflow-hidden">
+    <section className="relative min-h-[78vh] md:min-h-screen bg-gradient-to-br from-background via-background to-surface flex items-center overflow-hidden pt-14 md:pt-0">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-primary rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 md:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-2 text-sm font-semibold text-primary backdrop-blur-sm">
               <ShieldCheckIcon className="h-4 w-4" />
-              Secure IPTV Platform — Trusted by 10,000+ Users
+              Premium Streaming for Live Sports & Series
             </div>
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-black text-text leading-tight">
-                Premium
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                  Streaming
-                </span>
-                Experience
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text leading-tight">
+                Live Sports. Top Series. Fast Streaming.
               </h1>
-              <p className="text-xl text-text-muted max-w-xl leading-relaxed">
-                Access thousands of channels worldwide with crystal-clear quality, instant activation, and 24/7 premium support. Pay securely with cryptocurrency.
+              <p className="text-lg sm:text-xl text-text-muted max-w-xl leading-relaxed line-clamp-3 sm:line-clamp-none">
+                Stream NFL, NBA, MLB, NHL, hit series, and blockbuster movies with instant activation and subscription-grade crypto checkout built for US viewers.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
               <Link
                 href="/checkout?plan=plan_12m"
-                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                onClick={handlePrimaryCta}
+                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-6 sm:px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary w-full sm:w-auto min-h-[52px]"
               >
                 <svg className="h-5 w-5 transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Pay Securely with Crypto
+                Start Subscription
               </Link>
 
               <Link
                 href="#plans"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface/50 backdrop-blur-sm px-6 py-4 text-lg font-semibold text-text hover:bg-surface hover:border-primary/50 transition-all duration-300"
+                className="hidden sm:inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface/50 backdrop-blur-sm px-6 py-4 text-lg font-semibold text-text hover:bg-surface hover:border-primary/50 transition-all duration-300 min-h-[52px]"
               >
                 View Plans
               </Link>
             </div>
+
+            {/* Pricing hint for fast decision on mobile */}
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-text-muted">
+              <div className="inline-flex items-center gap-2 rounded-full bg-surface/70 border border-border px-3 py-2 w-full sm:w-auto justify-center">
+                <CreditCardIcon className="h-4 w-4 text-primary" />
+                <span>Annual subscription · $59/yr</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-surface/70 border border-border px-3 py-2 w-full sm:w-auto justify-center">
+                <LockClosedIcon className="h-4 w-4 text-secondary" />
+                <span>Instant secure subscription</span>
+              </div>
+            </div>
           </div>
 
 
-          <div className="relative animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <div className="relative animate-slide-up hidden md:block" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
               {/* Main Card */}
               <div className="rounded-2xl border border-border bg-surface/80 backdrop-blur-xl p-8 shadow-2xl hover:shadow-card-hover transition-all duration-500 hover:scale-105">
@@ -81,12 +98,12 @@ export function Hero() {
                 {/* Channel Grid */}
                 <div className="grid grid-cols-3 gap-3 mb-6">
                   {[
-                    { name: 'Sports HD', viewers: '2.1K', image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=300&fit=crop' },
-                    { name: 'Movies 4K', viewers: '1.8K', image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=300&fit=crop' },
-                    { name: 'News 24/7', viewers: '956', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=300&fit=crop' },
-                    { name: 'Kids Zone', viewers: '742', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop' },
-                    { name: 'Documentary', viewers: '523', image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=300&fit=crop' },
-                    { name: 'Music TV', viewers: '389', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop' },
+                    { name: 'NFL Live', viewers: '2.8K', image: '/images/streaming/nfl.jpg' },
+                    { name: 'NBA Live', viewers: '2.5K', image: '/images/streaming/nba.jpg' },
+                    { name: 'MLB Network', viewers: '1.9K', image: '/images/streaming/mlb.jpg' },
+                    { name: 'NHL Tonight', viewers: '1.4K', image: '/images/streaming/nhl.jpg' },
+                    { name: 'Top Movies', viewers: '1.2K', image: '/images/streaming/movies.jpg' },
+                    { name: 'US Series', viewers: '1.1K', image: '/images/streaming/series.jpg' },
                   ].map((channel, index) => (
                     <div
                       key={channel.name}
@@ -94,12 +111,13 @@ export function Hero() {
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <div className="h-12 rounded mb-2 overflow-hidden relative">
-                        <img 
-                          src={channel.image} 
-                          alt={channel.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        <img
+                          src={channel.image}
+                          alt={`${channel.name} channel preview`}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-surface to-surface/80"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <p className="text-xs font-medium text-text truncate">{channel.name}</p>
                       <p className="text-xs text-text-muted">{channel.viewers} watching</p>
@@ -107,7 +125,7 @@ export function Hero() {
                   ))}
                 </div>
 
-                {/* Payment Info */}
+                {/* Subscription Info */}
                 <div className="rounded-xl bg-primary/10 border border-primary/20 p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -117,13 +135,13 @@ export function Hero() {
                         </svg>
                       </div>
                       <div>
-                        <p className="font-semibold text-text text-sm">Secure Crypto Payment</p>
+                        <p className="font-semibold text-text text-sm">Secure Crypto Subscription</p>
                         <p className="text-xs text-text-muted">Instant blockchain verification</p>
                       </div>
                     </div>
                     <div className="text-right">
                       <p className="text-lg font-bold text-secondary">$59.00</p>
-                      <p className="text-xs text-text-muted">per year</p>
+                      <p className="text-xs text-text-muted">per year · auto-renew</p>
                     </div>
                   </div>
                 </div>

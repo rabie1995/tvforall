@@ -1,0 +1,40 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MLB stadium with pitcher on mound">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0a0c16" offset="0"/>
+      <stop stop-color="#0b1428" offset="0.5"/>
+      <stop stop-color="#0f1c32" offset="1"/>
+    </linearGradient>
+    <radialGradient id="lights" cx="50%" cy="15%" r="70%">
+      <stop stop-color="#38bdf8" stop-opacity="0.45" offset="0"/>
+      <stop stop-color="#22d3ee" stop-opacity="0.12" offset="0.6"/>
+      <stop stop-color="#22d3ee" stop-opacity="0" offset="1"/>
+    </radialGradient>
+    <linearGradient id="field" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#0ea86b" offset="0"/>
+      <stop stop-color="#0a7f52" offset="1"/>
+    </linearGradient>
+    <linearGradient id="infield" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#c08457" offset="0"/>
+      <stop stop-color="#9a6a45" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#lights)"/>
+  <rect x="-80" y="640" width="2080" height="520" fill="url(#field)" opacity="0.9"/>
+  <g opacity="0.85">
+    <ellipse cx="960" cy="760" rx="420" ry="180" fill="url(#infield)"/>
+    <ellipse cx="960" cy="760" rx="140" ry="70" fill="#f8fafc" opacity="0.1"/>
+  </g>
+  <g opacity="0.6" stroke="#e2e8f0" stroke-width="6">
+    <line x1="120" y1="840" x2="1800" y2="840"/>
+    <line x1="120" y1="920" x2="1800" y2="920"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M940 620c18-30 40-44 64-44 24 0 38 10 54 30l-30 80-120-10z" fill="#e2e8f0"/>
+    <rect x="960" y="540" width="10" height="120" rx="5" fill="#38bdf8"/>
+    <circle cx="980" cy="560" r="18" fill="#f97316"/>
+  </g>
+  <text x="120" y="220" fill="#e2e8f0" font-family="'Inter',sans-serif" font-size="76" font-weight="700" letter-spacing="2">MLB NETWORK</text>
+  <text x="120" y="286" fill="#cbd5e1" font-family="'Inter',sans-serif" font-size="34" font-weight="600">Diamond nights • Pitcher focus • 4K stream</text>
+</svg>

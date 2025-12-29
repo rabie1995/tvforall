@@ -5,6 +5,7 @@ import { CheckCircleIcon, StarIcon, CalendarIcon, SparklesIcon, FireIcon, BoltIc
 import { plans, type Plan } from '@/lib/plans';
 import { CURRENT_PROMO, hasActivePromo } from '@/lib/promo';
 import { useState, useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 const planIcons: Record<string, React.ReactNode> = {
   'plan_3m': <CalendarIcon className="h-6 w-6" />,
@@ -32,6 +33,19 @@ export function PricingCard({ plan }: { plan: Plan }) {
   const displayPrice = isPromoActive ? CURRENT_PROMO.promoPrice : plan.priceUsd;
   const hasDiscount = isPromoActive && CURRENT_PROMO.originalPrice > CURRENT_PROMO.promoPrice;
 
+  const handleSubscribeClick = () => {
+    trackEvent('click_subscribe', {
+      plan_id: plan.id,
+      plan_name: plan.name,
+      plan_duration_months: plan.durationMonths,
+      price_usd: plan.priceUsd
+    });
+    trackEvent(`select_plan_${plan.durationMonths}_months`, {
+      plan_id: plan.id,
+      billing_cycle: plan.billingCycle
+    });
+  };
+
   return (
     <div className={`group relative rounded-2xl border border-border/50 bg-surface/50 backdrop-blur-sm p-8 shadow-xl shadow-primary/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/15 hover:border-primary/30 hover:scale-105 animate-fade-in ${plan.popular ? 'ring-2 ring-primary shadow-primary/20' : ''} ${isPromoActive ? 'ring-2 ring-accent shadow-accent/20' : ''}`}>
       {/* Gradient overlay for popular plans */}
@@ -57,7 +71,7 @@ export function PricingCard({ plan }: { plan: Plan }) {
             {icon}
           </div>
           <h3 className="text-2xl font-bold text-text mb-2">{plan.name}</h3>
-          <p className="text-sm text-text-muted">Instant activation • No hidden fees</p>
+          <p className="text-sm text-text-muted">Subscription access • Instant activation • No hidden fees</p>
         </div>
         <div className="text-right">
           {hasDiscount && (
@@ -75,6 +89,18 @@ export function PricingCard({ plan }: { plan: Plan }) {
       </div>
 
       <ul className="mb-8 space-y-3 text-sm text-text-muted">
+        <li className="flex items-center gap-3">
+          <ShieldCheckIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
+          <span>{plan.billingCycle}</span>
+        </li>
+        <li className="flex items-center gap-3">
+          <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+          <span>{plan.renewalPolicy}</span>
+        </li>
+        <li className="flex items-center gap-3">
+          <SparklesIcon className="h-5 w-5 flex-shrink-0 text-yellow-500" />
+          <span>{plan.accessWindow}</span>
+        </li>
         {plan.perks.map((perk) => (
           <li key={perk} className="flex items-center gap-3">
             <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
@@ -85,16 +111,17 @@ export function PricingCard({ plan }: { plan: Plan }) {
 
       <Link
         href={`/checkout?plan=${plan.id}`}
+        onClick={handleSubscribeClick}
         className={`relative z-10 inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 ${plan.popular ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-primary/25' : 'bg-gradient-to-r from-surface to-surface/80 hover:from-primary hover:to-secondary'}`}
       >
         <PaperAirplaneIcon className="h-5 w-5" />
-        Pay Securely with Crypto
+        Subscribe Securely
       </Link>
 
       <div className="mt-4 flex items-center justify-center gap-4 text-xs text-text-muted">
         <div className="flex items-center gap-1">
           <ShieldCheckIcon className="h-4 w-4 text-green-500" />
-          Secure Payment
+          Manage Subscription
         </div>
         <div className="flex items-center gap-1">
           <SparklesIcon className="h-4 w-4 text-blue-500" />

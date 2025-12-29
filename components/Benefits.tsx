@@ -2,26 +2,26 @@ import { ShieldCheckIcon, CheckCircleIcon, ChatBubbleLeftRightIcon, CheckBadgeIc
 
 const benefits = [
   {
-    title: 'Secure payments',
-    description: 'USDT payments with address + amount verification. We never store private keys.',
-    badge: 'Crypto-native',
+    title: 'Secure subscriptions',
+    description: 'Crypto subscriptions with address + amount verification. We never store private keys.',
+    badge: 'Subscription-ready',
     icon: ShieldCheckIcon
   },
   {
     title: 'Instant activation',
-    description: 'Orders are provisioned automatically after on-chain confirmations. Manual override available.',
+    description: 'Subscriptions activate automatically after on-chain confirmations for fast access to live games and shows.',
     badge: 'Fast',
     icon: CheckCircleIcon
   },
   {
     title: '24/7 support',
-    description: 'Live agents in English, French, and Arabic with remote troubleshooting.',
+    description: 'Live English-first agents with remote troubleshooting so you never miss kickoff or premiere time.',
     badge: 'Humans only',
     icon: ChatBubbleLeftRightIcon
   },
   {
     title: 'Legal & licensed',
-    description: 'All streams provided by the client with valid rights. No piracy or scraping.',
+    description: 'All streams provided by the client with valid rights. No piracy or scraping. Transparent, contract-free access.',
     badge: 'Compliant',
     icon: CheckBadgeIcon
   }
@@ -34,7 +34,7 @@ export function Benefits() {
         <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">Why tv for all</p>
-            <h2 className="text-3xl font-bold text-text" style={{ fontFamily: 'var(--font-poppins)' }}>Trusted IPTV without friction</h2>
+            <h2 className="text-3xl font-bold text-text" style={{ fontFamily: 'var(--font-poppins)' }}>Trusted Premium TV without friction</h2>
             <p className="text-text-muted">Built for reliability, transparency, and global audiences.</p>
           </div>
           <div className="flex items-center gap-3 text-sm text-text-muted">
