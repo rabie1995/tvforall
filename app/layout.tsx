@@ -7,6 +7,7 @@ import { Inter, Noto_Kufi_Arabic, Poppins } from 'next/font/google';
 import { SiteBackground } from '@/components/SiteBackground';
 import TelegramSupportButton from '@/components/TelegramSupportButton';
 import { AnalyticsProvider } from '@/components/AnalyticsProvider';
+import { Analytics } from '@vercel/analytics/react';
 import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 import './globals.css';
 
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         {children}
         <TelegramSupportButton />
+        <Analytics />
       </body>
     </html>
   );
